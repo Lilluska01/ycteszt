@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yellow Carp - Főoldal</title>
+  <link rel="icon" type="image/png" href="/logo.png?v=2">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f5e72d, #3cb4e5);
+      color: #000;
+    }
+
+    .page-container {
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+    }
+
+    /* --- Sidebar --- */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 100vh;
+      color: #f1c40f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 10px;
+      z-index: 1000;
+      background-image: url('sav.png');
+      background-repeat: repeat;
+      background-size: 800px;
+      background-position: center;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      font-size: 1.4em;
+      background-color: #1b2838;
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin: 15px 0 25px 0;
+      color: #f1c40f;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    .sidebar ul li {
+      width: 100%;
+      text-align: left;
+    }
+
+    .sidebar ul li a {
+      color: #f1c40f;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      padding: 15px 20px;
+      transition: all 0.3s ease;
+      border-radius: 6px;
+      margin: 5px 10px;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #3cb4e5;
+      color: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    /* --- Hamburger --- */
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      width: 30px;
+      height: 25px;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 2000;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 4px;
+      background-color: #f1c40f;
+      border-radius: 2px;
+    }
+
+    .main-area {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin-left: 180px;
+      background: linear-gradient(to right, #f5e72d, #3cb4e5);
+    }
+
+    .main-content {
+      flex-grow: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      color: #000;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .content-wrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-right: 200px;
+    }
+
+    .intro-text {
+      flex: 1;
+      font-size: 1.1em;
+      font-style: italic;
+      max-width: calc(100% - 200px);
+    }
+
+    .intro-text p {
+      margin-bottom: 10px;
+    }
+
+    .corner-logo {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 250px;
+      height: auto;
+      border: none;
+      box-shadow: none;
+      object-fit: contain;
+      background: none;
+    }
+
+    .separator {
+      width: 100%;
+      height: 2px;
+      background-color: rgba(0,0,0,0.2);
+      margin: 40px 0;
+    }
+
+    .feedback-section {
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 120px;
+    }
+
+    .feedback-section h2 {
+      text-align: center;
+      color: #000;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .feedback {
+      margin: 10px 0;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .feedback p {
+      margin: 0;
+      font-size: 1em;
+    }
+
+    .feedback span {
+      display: block;
+      margin-top: 5px;
+      font-size: 0.9em;
+      color: #333;
+      text-align: right;
+      font-style: italic;
+    }
+
+    .bottom-bar {
+      background-color: #1b1b1b;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+      width: auto;
+      margin-top: auto;
+    }
+
+    .bottom-bar a {
+      color: #f1c40f;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    .bottom-bar a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .sidebar {
+        transform: translateX(-100%);
+        width: 200px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      .sidebar.active {
+        transform: translateX(0);
+      }
+
+      .main-area {
+        margin-left: 0;
+      }
+
+      .corner-logo {
+        position: static;
+        display: block;
+        margin: 20px auto;
+      }
+
+      .content-wrapper {
+        margin-right: 0;
+      }
+
+      .intro-text {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hamburger menü ikon -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="page-container">
+    <div class="sidebar" id="sidebar">
+      <h2>Yellow Carp</h2>
+      <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+        <li><a href="alkatreszek.html">Alkatrészek</a></li>
+        <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        <li><a href="gyik.html">GY.I.K</a></li>
+      </ul>
+    </div>
+
+    <div class="main-area">
+      <div class="main-content">
+        <header>
+          <h1>Üdvözlünk a Yellow Carp orsószerviz oldalán!</h1>
+        </header>
+
+        <img src="NagyLogo.png" alt="Yellow Carp logó" class="corner-logo">
+
+        <div class="content-wrapper">
+          <div class="intro-text">
+	<h3>Rólam</h3>
+            <p>„Már gyerekkoromban lenyűgözött a horgászorsók működése, gyakran szétszedtem és bütyköltem őket kíváncsiságból. Később a műszaki tanulmányaim alatt megszerzett ismereteket felhasználva, már komolyabban foglalkoztam a karbantartásukkal, jobbá tételükkel. Jó 10 évvel ezelőtt ütött be nálam a Shimano "szerelem" és azóta leginkább ennek a márkának a szervizelése, tuningolása vált hobbimmá, már-már igazi hivatássá.</p>
+            <p> Legyen szó pergető, feeder vagy bojlis orsóról, nálam mind új életre kel, hogy ismét maximális teljesítményt nyújtson a vízparton.</p>
+            <p>Gyári és minőségi magyar kisipari tuning alkatrészekkel, precíz munkával várok minden horgászt, aki számára fontos a felszerelése megbízhatósága.”</p>
+          </div>
+        </div>
+
+        <div class="separator"></div>
+
+        <section class="feedback-section">
+          <h2>Visszajelzések</h2>
+          <div class="feedback"><p>„Valami”</p><span>- Valaki</span></div>
+          <div class="feedback"><p>„Valami valami.”</p><span>- Valaki</span></div>
+          <div class="feedback"><p>„Valami valami valami.”</p><span>- Valaki</span></div>
+        </section>
+
+        <div class="separator"></div>
+      </div>
+
+      <div class="bottom-bar">
+        <p>© 2025 Yellow Carp Orsószervíz - Minden jog fenntartva | 
+        <a href="mailto:yellowcarp.reels@gmail.com">yellowcarp.reels@gmail.com</a> | 
+        <a href="tel:+36204113760">+36 20 411 3760</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Hamburger menü működés
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

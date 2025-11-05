@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yellow Carp - Szolgáltatások</title>
+  <link rel="icon" type="image/png" href="/logo.png?v=2">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f5e72d, #3cb4e5);
+      color: #000;
+    }
+
+    .page-container {
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 100vh;
+      color: #f1c40f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 10px;
+      z-index: 1000;
+      background-image: url('sav.png');
+      background-repeat: repeat;
+      background-size: 800px;
+      background-position: center;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      font-size: 1.4em;
+      background-color: #1b2838;
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin: 15px 0 25px 0;
+      color: #f1c40f;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    .sidebar ul li {
+      width: 100%;
+      text-align: left;
+    }
+
+    .sidebar ul li a {
+      color: #f1c40f;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      padding: 15px 20px;
+      transition: all 0.3s ease;
+      border-radius: 6px;
+      margin: 5px 10px;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #3cb4e5;
+      color: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .main-area {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin-left: 180px;
+      background: linear-gradient(to right, #f5e72d, #3cb4e5);
+    }
+
+    .main-content {
+      flex-grow: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-top: 30px; /* ez tolja lejjebb a tartalmat a logó alatt */
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      color: #000;
+      margin-bottom: 130px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+	  text-align: center;
+    }
+
+    .corner-logo {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 250px;
+      height: auto;
+      border: none;
+      box-shadow: none;
+      object-fit: contain;
+      background: none;
+    }
+
+    .service-list {
+      background-color: rgba(255,255,255,0.4);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .service-item {
+      margin-bottom: 20px;
+    }
+
+    .service-item h3 {
+      color: #1b2838;
+      margin-bottom: 5px;
+    }
+
+    .service-item p {
+      margin: 0;
+      font-size: 1em;
+    }
+
+    .bottom-bar {
+      background-color: #1b1b1b;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+      width: auto;
+      margin-top: auto;
+    }
+
+    .bottom-bar a {
+      color: #f1c40f;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    .bottom-bar a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .corner-logo {
+        position: static;
+        display: block;
+        margin: 20px auto;
+      }
+
+      .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .main-area {
+        margin-left: 0;
+      }
+
+      .main-content {
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <div class="sidebar">
+      <h2>Yellow Carp</h2>
+      <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+        <li><a href="alkatreszek.html">Alkatrészek</a></li>
+        <li><a href="kapcsolat.html">Kapcsolat</a></li>
+		<li><a href="gyik.html">GY.I.K</a></li>
+      </ul>
+    </div>
+
+    <div class="main-area">
+      <img src="NagyLogo.png" alt="Yellow Carp logó" class="corner-logo">
+
+      <div class="main-content">
+        <header>
+          <h1>Szolgáltatásaink</h1>
+        </header>
+
+        <div class="service-list">
+          <div class="service-item">
+            <h3>🎣 Orsószerviz</h3>
+            <p>Teljes szétszerelés, tisztítás, újrakenés és összeszerelés, gyári vagy tuning alkatrészek beépítésével.</p>
+          </div>
+
+          <div class="service-item">
+            <h3>🔧 Tuning és fejlesztés</h3>
+            <p>Kerámia csapágyak, precíziós alkatrészek és súrlódáscsökkentő megoldások a maximális teljesítményért.</p>
+          </div>
+
+          <div class="service-item">
+            <h3>🧩 Alkatrészcsere</h3>
+            <p>Gyári és magyar kisipari elemek beépítése, kopott vagy törött alkatrészek pótlása.</p>
+          </div>
+
+          <div class="service-item">
+            <h3>🧼 Karbantartás</h3>
+            <p>Éves szerviz, karbantartás és teljes ellenőrzés a hosszú élettartam érdekében.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-bar">
+        <p>© 2025 Yellow Carp Orsószervíz - Minden jog fenntartva | 
+        <a href="mailto:yellowcarp.reels@gmail.com">yellowcarp.reels@gmail.com</a> | 
+        <a href="tel:+36204113760">+36 20 411 3760</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
