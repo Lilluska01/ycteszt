@@ -16,11 +16,7 @@
       color: #000;
     }
 
-    .page-container {
-      display: flex;
-      flex: 1;
-      min-height: 100vh;
-    }
+    .page-container { display: flex; flex: 1; min-height: 100vh; }
 
     .sidebar {
       position: fixed;
@@ -77,26 +73,15 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
-    .main-area {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      margin-left: 180px;
-    }
-
-    .main-content {
-      flex-grow: 1;
-      padding: 50px;
-      position: relative;
-    }
+    .main-area { display: flex; flex-direction: column; flex: 1; margin-left: 180px; }
+    .main-content { flex-grow: 1; padding: 50px; position: relative; }
 
     header h1 {
       font-size: 1.8em;
       margin-bottom: 100px;
-	  text-align: center;
+      text-align: center;
     }
 
-    /* --- Keresőmező --- */
     .search-bar {
       margin-bottom: 30px;
       display: flex;
@@ -111,7 +96,6 @@
       font-size: 1em;
     }
 
-    /* --- Alkatrész rács --- */
     .parts-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -128,9 +112,7 @@
       cursor: pointer;
     }
 
-    .part-card:hover {
-      transform: translateY(-5px);
-    }
+    .part-card:hover { transform: translateY(-5px); }
 
     .part-card img {
       width: 100%;
@@ -146,11 +128,7 @@
       margin-bottom: 5px;
     }
 
-    .part-desc {
-      font-size: 0.9em;
-      color: #333;
-      margin-bottom: 10px;
-    }
+    .part-desc { font-size: 0.9em; color: #333; margin-bottom: 10px; }
 
     .stock {
       font-weight: bold;
@@ -160,15 +138,8 @@
       font-size: 0.9em;
     }
 
-    .in-stock {
-      background-color: #27ae60;
-      color: #fff;
-    }
-
-    .out-stock {
-      background-color: #e74c3c;
-      color: #fff;
-    }
+    .in-stock { background-color: #27ae60; color: #fff; }
+    .out-stock { background-color: #e74c3c; color: #fff; }
 
     .bottom-bar {
       background-color: #1b1b1b;
@@ -179,18 +150,9 @@
       margin-top: auto;
     }
 
-    .bottom-bar a {
-      color: #f1c40f;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 10px;
-    }
+    .bottom-bar a { color: #f1c40f; text-decoration: none; font-weight: bold; margin: 0 10px; }
+    .bottom-bar a:hover { text-decoration: underline; }
 
-    .bottom-bar a:hover {
-      text-decoration: underline;
-    }
-
-    /* --- Modális ablak stílusa --- */
     .modal {
       display: none;
       position: fixed;
@@ -222,36 +184,21 @@
       font-weight: bold;
     }
 
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-	
-	.corner-logo {
+    .close:hover, .close:focus { color: black; cursor: pointer; }
+
+    .corner-logo {
       position: absolute;
       top: 10px;
       right: 10px;
       width: 250px;
       height: auto;
       border: none;
-      box-shadow: none;
-      object-fit: contain;
-	  background: none;
+      background: none;
     }
 
     @media (max-width: 768px) {
-      .sidebar {
-        position: static;
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .main-area {
-        margin-left: 0;
-      }
+      .sidebar { position: static; width: 100%; height: auto; flex-direction: row; justify-content: space-around; }
+      .main-area { margin-left: 0; }
     }
   </style>
 </head>
@@ -264,92 +211,21 @@
         <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
         <li><a href="alkatreszek.html">Alkatrészek</a></li>
         <li><a href="kapcsolat.html">Kapcsolat</a></li>
-		<li><a href="gyik.html">GY.I.K</a></li>
+        <li><a href="gyik.html">GY.I.K</a></li>
       </ul>
     </div>
 
     <div class="main-area">
       <div class="main-content">
         <header><h1>Alkatrészek</h1></header>
-		<img src="NagyLogo.png" alt="Yellow Carp logó" class="corner-logo">
+        <img src="NagyLogo.png" alt="Yellow Carp logó" class="corner-logo">
+
         <div class="search-bar">
-          <input type="text" id="searchInput" placeholder="Keresés alkatrész neve vagy leírása alapján...">
+          <input type="text" id="searchInput" placeholder="Keresés alkatrész neve vagy cikkszáma alapján...">
         </div>
 
-        <div class="parts-grid" id="partsGrid">
-          <!-- Minta alkatrészek -->
-          <div class="part-card" data-longdesc="Ez a prémium Shimano csapágy nagy pontosságú, rozsdamentes acélból készült, hosszú élettartammal és sima futással.">
-            <img src="RD14735.jpg" alt="Baitrunner Lever Arm R">
-            <div class="part-name">Baitrunner kar R</div>
-            <div class="part-desc">RD14735 | 108P4 (Baitrunner Lever Arm R)</div>
-            <div class="stock in-stock">✅ Készleten</div>
-          </div>
+        <div class="parts-grid" id="partsGrid"></div>
 
-          <div class="part-card" data-longdesc="Kompatibilis: Big Baitrunner XT-A LC, Big Baitrunner XT-B LC, Big Baitrunner Ci4+ XT-B LC">
-            <img src="RD14725.jpg" alt="Baitrunner Lever Arm L">
-            <div class="part-name">Baitrunner kar L</div>
-            <div class="part-desc">RD14725 | 10Q7G (Baitrunner Lever Arm L)  </div>
-            <div class="stock in-stock">✅ Készleten</div>
-          </div>
-
-          <div class="part-card" data-longdesc="Erősített acél fogaskerék-szett, mely megbízható és hosszú élettartamot biztosít nagy terhelés mellett is.">
-            <img src="alkatresz3.jpg" alt="Fogaskerék">
-            <div class="part-name">Fogaskerék szett</div>
-            <div class="part-desc">Erősített acél fogaskerék a hosszú élettartamért.</div>
-            <div class="stock in-stock">✅ Készleten</div>
-          </div>
-
-          <div class="part-card" data-longdesc="Kiváló minőségű, rozsdamentes acél tengely, amely biztosítja az orsó stabil és precíz működését.">
-            <img src="alkatresz4.jpg" alt="Tengely">
-            <div class="part-name">Tengely</div>
-            <div class="part-desc">Rozsdamentes acél tengely a precíz futásért.</div>
-            <div class="stock in-stock">✅ Készleten</div>
-          </div>
-
-          <div class="part-card" data-longdesc="Könnyű, alumínium dob, ami csökkenti az orsó súlyát, miközben megtartja a stabilitást és a tartósságot.">
-            <img src="alkatresz5.jpg" alt="Dob">
-            <div class="part-name">Orsó dob</div>
-            <div class="part-desc">Könnyű alumínium dob Shimano orsókhoz.</div>
-            <div class="stock out-stock">❌ Nincs készleten</div>
-          </div>
-          <div class="part-card" data-longdesc="Ez a prémium Shimano csapágy nagy pontosságú, rozsdamentes acélból készült, hosszú élettartammal és sima futással.">
-            <img src="alkatresz1.jpg" alt="Csapágy">
-            <div class="part-name">Shimano csapágy</div>
-            <div class="part-desc">Kiváló minőségű csapágy Shimano orsókhoz.</div>
-            <div class="stock in-stock">✅ Készleten</div>
-          </div>
-
-          <div class="part-card" data-longdesc="Professzionális fékrendszer szett precíziós beállítással, extra kopásálló alkatrészekkel a Shimano orsókhoz.">
-            <img src="alkatresz2.jpg" alt="Fékrendszer">
-            <div class="part-name">Fékrendszer szett</div>
-            <div class="part-desc">asdasd2</div>
-            <div class="stock out-stock">❌ Nincs készleten</div>
-          </div>
-
-          <div class="part-card" data-longdesc="Erősített acél fogaskerék-szett, mely megbízható és hosszú élettartamot biztosít nagy terhelés mellett is.">
-            <img src="alkatresz3.jpg" alt="Fogaskerék">
-            <div class="part-name">Fogaskerék szett</div>
-            <div class="part-desc">Erősített acél fogaskerék a hosszú élettartamért.</div>
-            <div class="stock in-stock">✅ Készleten</div>
-          </div>
-
-          <div class="part-card" data-longdesc="Kiváló minőségű, rozsdamentes acél tengely, amely biztosítja az orsó stabil és precíz működését.">
-            <img src="alkatresz4.jpg" alt="Tengely">
-            <div class="part-name">Tengely</div>
-            <div class="part-desc">Rozsdamentes acél tengely a precíz futásért.</div>
-            <div class="stock in-stock">✅ Készleten</div>
-          </div>
-
-          <div class="part-card" data-longdesc="Könnyű, alumínium dob, ami csökkenti az orsó súlyát, miközben megtartja a stabilitást és a tartósságot.">
-            <img src="alkatresz5.jpg" alt="Dob">
-            <div class="part-name">Orsó dob</div>
-            <div class="part-desc">Könnyű alumínium dob Shimano orsókhoz.</div>
-            <div class="stock out-stock">❌ Nincs készleten</div>
-          </div>
-
-        </div>
-
-        <!-- Modális ablak -->
         <div id="myModal" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
@@ -369,47 +245,58 @@
   </div>
 
   <script>
-    // Keresés (név + leírás)
-    const searchInput = document.getElementById('searchInput');
-    const partsGrid = document.getElementById('partsGrid');
-    const partCards = partsGrid.getElementsByClassName('part-card');
+    // Betölti az eredeti JSON-t (a te formátumod szerint)
+    fetch('alkatreszek.json')
+      .then(res => res.json())
+      .then(data => {
+        const grid = document.getElementById('partsGrid');
+        grid.innerHTML = '';
 
+        data.forEach(item => {
+          const nev = item["Megnevezés (magyar)"] || item["Megnevezés (angol)"] || "Ismeretlen alkatrész";
+          const regiKod = item["Régi cikkszám"] || "-";
+          const ujKod = item["Új cikkszám"] ? `Új cikkszám: ${item["Új cikkszám"]}` : "";
+          const leiras = item["Orsó típus"] || "";
+          const kep = `${regiKod}.jpg`;
+
+          const card = document.createElement('div');
+          card.className = 'part-card';
+
+          card.innerHTML = `
+            <img src="${kep}" alt="${nev}" onerror="this.src='placeholder.jpg'">
+            <div class="part-name">${nev}</div>
+            <div class="part-desc">${regiKod} | ${ujKod}</div>
+            <div class="stock in-stock">✅ Készleten</div>
+          `;
+
+          card.addEventListener('click', () => {
+            document.getElementById('modal-title').textContent = nev;
+            document.getElementById('modal-desc').textContent = ujKod;
+            document.getElementById('modal-longdesc').textContent = leiras;
+            document.getElementById('myModal').style.display = 'block';
+          });
+
+          grid.appendChild(card);
+        });
+      })
+      .catch(err => console.error('Hiba a JSON betöltésekor:', err));
+
+    // Kereső működés
+    const searchInput = document.getElementById('searchInput');
     searchInput.addEventListener('keyup', () => {
       const filter = searchInput.value.toLowerCase();
-      for (let card of partCards) {
-        const name = card.querySelector('.part-name').textContent.toLowerCase();
-        const desc = card.querySelector('.part-desc').textContent.toLowerCase();
-        card.style.display = name.includes(filter) || desc.includes(filter) ? '' : 'none';
+      const cards = document.getElementsByClassName('part-card');
+      for (let card of cards) {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(filter) ? '' : 'none';
       }
     });
 
-    // Modális ablak funkció
+    // Modális ablak bezárása
     const modal = document.getElementById('myModal');
     const closeModal = document.querySelector('.close');
-
-    for (let card of partCards) {
-      card.addEventListener('click', () => {
-        const title = card.querySelector('.part-name').textContent;
-        const desc = card.querySelector('.part-desc').textContent;
-        const longdesc = card.dataset.longdesc || desc;
-
-        document.getElementById('modal-title').textContent = title;
-        document.getElementById('modal-desc').textContent = desc;
-        document.getElementById('modal-longdesc').textContent = longdesc;
-
-        modal.style.display = "block";
-      });
-    }
-
-    closeModal.addEventListener('click', () => {
-      modal.style.display = "none";
-    });
-
-    window.addEventListener('click', (event) => {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    });
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
   </script>
 </body>
 </html>
