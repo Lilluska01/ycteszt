@@ -3,20 +3,21 @@
 /* Alap mobil beállítások */
 @media (max-width: 768px) {
 
-  /* Logó mobilra - mindig a jobb felső sarokban */
+  /* Logó mobilra - jobbra fent a tartalomhoz képest */
   .corner-logo {
-    position: fixed;       /* képernyőhöz rögzítve */
-    top: 60px;             /* felülről */
-    right: 5px;            /* majdnem a jobb szélre */
-    width: 130px;
+    position: relative;       /* nem fixed, nem absolute a viewporthoz */
+    display: block;
+    margin: 20px 0 20px auto; /* fent: 20px, jobb: auto, bal: 0 */
+    width: 130px;             /* kisebb méret */
     height: auto;
-    z-index: 3000;         /* hamburger fölé, modal alá */
+    float: right;             /* a sorban jobbra tolás */
+    z-index: 1000;            /* sidebar/hamburger fölé, de nem fixed */
   }
 
   /* Hamburger megjelenítése */
   .hamburger {
     display: flex;
-    position: fixed;
+    position: fixed;           /* továbbra is fixed, hogy mindig látszódjon */
     top: 15px;
     left: 15px;
     flex-direction: column;
@@ -115,12 +116,11 @@
 
   /* Logó még kisebb képernyőre */
   .corner-logo {
-    position: fixed;
-    top: 50px;
-    right: 5px;
+    position: relative;   /* továbbra se fixed */
     width: 100px;
     height: auto;
-    z-index: 3000;
+    margin: 15px 0 15px auto; /* fent:15px, jobb:auto, bal:0 */
+    float: right;
   }
 
   .post-image {
