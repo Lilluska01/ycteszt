@@ -3,6 +3,12 @@
 /* Alap mobil beállítások */
 @media (max-width: 768px) {
 
+.corner-logo {
+    position: static;      /* ne legyen absolute */
+    display: block;
+    margin: 40px auto 20px auto; /* felül nagyobb margó, alul kisebb */
+    width: 150px;           /* kisebb méret */
+  }
   /* Hamburger megjelenítése */
   .hamburger {
     display: flex;
