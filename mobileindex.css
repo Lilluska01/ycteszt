@@ -3,12 +3,15 @@
 /* Alap mobil beállítások */
 @media (max-width: 768px) {
 
-.corner-logo {
-    position: static !important;      /* ne legyen absolute */
-    display: block !important;
-    margin: 80px auto 20px auto !important; /* felül nagyobb margó, alul kisebb */
-    width: 100px !important;           /* kisebb méret */
+  /* Logó mobilra */
+  .corner-logo {
+    position: relative;       /* ne legyen absolute/fixed */
+    display: block;
+    margin: 80px auto 20px auto; /* felül nagyobb, alul kisebb margó */
+    width: 120px;             /* kisebb méret */
+    height: auto;
   }
+
   /* Hamburger megjelenítése */
   .hamburger {
     display: flex;
@@ -92,10 +95,6 @@
     font-size: 0.85em;
     padding: 8px;
   }
-
-  .corner-logo {
-    width: 180px;
-  }
 }
 
 /* Extra kisebb eszközre, 480px alatt */
@@ -122,5 +121,10 @@
 
   .intro-text h3 {
     font-size: 1.1em;
+  }
+
+  .corner-logo {
+    width: 100px; /* kisebb készülékre */
+    margin: 60px auto 15px auto;
   }
 }
