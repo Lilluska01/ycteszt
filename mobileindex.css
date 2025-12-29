@@ -1,0 +1,97 @@
+/* Mobile specifikus felülírások 768px alatt */
+@media (max-width: 768px) {
+
+  /* Hamburger látható */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Sidebar alapból elrejtve */
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    width: 200px;
+    height: 100vh;
+    padding-top: 20px;
+    background-size: cover;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.active {
+    transform: translateX(100%);
+  }
+
+  .sidebar h2 {
+    font-size: 1.6em;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar ul li a {
+    padding: 12px 15px;
+    margin: 4px 8px;
+    font-size: 1em;
+  }
+
+  /* Main content margó nélkül */
+  .main-area {
+    margin-left: 0;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .corner-logo {
+    position: static;
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+  }
+
+  .intro-text {
+    font-size: 1em;
+    max-width: 100%;
+  }
+
+  /* Posts grid mobilon 1 oszlop */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .post-card {
+    min-height: auto;
+    padding: 14px;
+  }
+
+  .post-image {
+    height: 180px;
+  }
+
+  .post-card p {
+    font-size: 0.95em;
+    -webkit-line-clamp: 4; /* kevesebb sor mobilon */
+  }
+
+  /* Post gallery mobilon */
+  .post-gallery img {
+    width: 48%;
+    margin-bottom: 10px;
+  }
+
+  /* Modal kisebb képernyőn */
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+    margin: 5vh auto;
+  }
+
+  /* Footer */
+  .bottom-bar {
+    font-size: 0.9em;
+    padding: 12px;
+  }
+}
