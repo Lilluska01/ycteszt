@@ -7,8 +7,8 @@
   .corner-logo {
     position: relative;       /* ne legyen absolute/fixed */
     display: block;
-    margin: 80px auto 20px auto; /* felül nagyobb, alul kisebb margó */
-    width: 120px;             /* kisebb méret */
+    margin: 70px 200px 20px auto; /* felül nagyobb, alul kisebb margó */
+    width: 130px;             /* kisebb méret */
     height: auto;
   }
 
