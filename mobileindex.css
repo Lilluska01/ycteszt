@@ -5,10 +5,10 @@
 
   /* Logó mobilra */
   .corner-logo {
-    position: relative;       /* ne legyen absolute/fixed */
-    display: block;
-    margin: 70px 0 20px 5px; 
-    width: 130px;             /* kisebb méret */
+    position: absolute;   /* vagy fixed, ha scrollozásnál is látszódjon */
+    top: 60px;            /* felülről távolság */
+    right: 5px;           /* majdnem a képernyő szélére */
+    width: 100px;
     height: auto;
   }
 
@@ -98,13 +98,17 @@
 }
 
 @media (max-width: 480px) {
-
   .corner-logo {
+    position: absolute;   /* maradjon absolute */
+    top: 60px;            /* felülről távolság */
+    right: 5px;           /* majdnem a képernyő szélére */
     width: 100px; 
-    margin: 60px 0 15px 5px; /* felül 60px, jobb 0, alul 15px, bal 5px */
+    height: auto;
+    margin: 0;            /* margin ne zavarjon */
     display: block;
-    position: relative;
   }
+}
+
 
   /* többi stílus marad */
   .post-image {
