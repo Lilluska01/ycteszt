@@ -97,9 +97,16 @@
   }
 }
 
-/* Extra kisebb eszközre, 480px alatt */
 @media (max-width: 480px) {
 
+  .corner-logo {
+    width: 100px; 
+    margin: 60px 0 15px 5px; /* felül 60px, jobb 0, alul 15px, bal 5px */
+    display: block;
+    position: relative;
+  }
+
+  /* többi stílus marad */
   .post-image {
     height: 120px;
   }
@@ -121,10 +128,5 @@
 
   .intro-text h3 {
     font-size: 1.1em;
-  }
-
-  .corner-logo {
-    width: 100px; /* kisebb készülékre */
-    margin: 60px auto 15px auto;
   }
 }
