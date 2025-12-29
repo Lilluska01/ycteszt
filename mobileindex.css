@@ -1,18 +1,11 @@
-/* MOBILEINDEX.CSS */
-
-/* Alap mobil beállítások */
 @media (max-width: 768px) {
-
-  /* Logó mobilra – jobb oldalra pozícionálva */
   .corner-logo {
-    position: absolute;   /* absolute, hogy a képernyő jobb szélén legyen */
-    top: 60px;            /* felülről távolság */
-    right: 5px;           /* majdnem a képernyő szélére */
-    width: 130px;          /* méret */
+    position: fixed;    /* fixed a képernyőhöz rögzítve */
+    top: 60px;          /* felülről */
+    right: 5px;         /* majdnem a képernyő szélére */
+    width: 130px;
     height: auto;
-    margin: 0;
-    display: block;
-    z-index: 1500;         /* legyen a hamburger fölött */
+    z-index: 1500;      /* hamburger fölé */
   }
 
   /* Hamburger megjelenítése */
@@ -112,17 +105,13 @@
   }
 }
 
-/* Extra kisebb eszközre, 480px alatt */
 @media (max-width: 480px) {
-
   .corner-logo {
-    position: absolute;  /* absolute, hogy a jobb oldalon maradjon */
+    position: fixed;    /* fixed marad */
     top: 50px;
     right: 5px;
-    width: 100px; 
+    width: 100px;
     height: auto;
-    margin: 0;
-    display: block;
     z-index: 1500;
   }
 
