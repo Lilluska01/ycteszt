@@ -8,7 +8,8 @@
     position: relative;       /* ne legyen absolute/fixed */
     display: block;
     margin-left: 200px;
-	margin: 70px auto 20px auto; /* felül nagyobb, alul kisebb margó */
+	margin-bottom: 20px;
+	margin-top: 70px; /* felül nagyobb, alul kisebb margó */
     width: 130px;             /* kisebb méret */
     height: auto;
   }
