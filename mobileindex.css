@@ -3,21 +3,20 @@
 /* Alap mobil beállítások */
 @media (max-width: 768px) {
 
-  /* Logó mobilra - jobbra fent a tartalomhoz képest */
+  /* Logó mobilra - a tartalom jobb felső sarkában */
   .corner-logo {
-    position: relative;       /* nem fixed, nem absolute a viewporthoz */
+    position: relative;       /* nem fixed */
     display: block;
-    margin: 20px 0 20px auto; /* fent: 20px, jobb: auto, bal: 0 */
-    width: 130px;             /* kisebb méret */
+    margin: 20px 0 20px 0;    /* felül 20px, alul 20px */
+    width: 130px;
     height: auto;
-    float: right;             /* a sorban jobbra tolás */
-    z-index: 1000;            /* sidebar/hamburger fölé, de nem fixed */
+    align-self: flex-end;     /* flex konténerben jobbra */
   }
 
   /* Hamburger megjelenítése */
   .hamburger {
     display: flex;
-    position: fixed;           /* továbbra is fixed, hogy mindig látszódjon */
+    position: fixed;           /* hamburger mindig látszik */
     top: 15px;
     left: 15px;
     flex-direction: column;
@@ -58,9 +57,10 @@
 
   /* Content wrapper mobilon */
   .content-wrapper {
-    margin: 0 15px;
-    gap: 20px;
+    display: flex;
     flex-direction: column;
+    gap: 20px;
+    margin: 0 15px;
   }
 
   /* Intro-text Rólam rész */
@@ -114,13 +114,12 @@
 /* Extra kisebb eszközre, 480px alatt */
 @media (max-width: 480px) {
 
-  /* Logó még kisebb képernyőre */
+  /* Logó kisebb képernyőre */
   .corner-logo {
-    position: relative;   /* továbbra se fixed */
     width: 100px;
     height: auto;
-    margin: 15px 0 15px auto; /* fent:15px, jobb:auto, bal:0 */
-    float: right;
+    align-self: flex-end; /* flex konténerben jobbra */
+    margin: 15px 0;
   }
 
   .post-image {
