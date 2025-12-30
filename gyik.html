@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yellow Carp – GY.I.K</title>
+  <title>Yellow Carp - GY.I.K</title>
   <link rel="icon" type="image/png" href="/logo.png?v=2">
 
   <style>
@@ -22,6 +22,19 @@
       display: flex;
       flex: 1;
     }
+	
+    .corner-logo {
+      position: absolute;
+      top: 0px;
+      right: 10px;
+      width: 250px;
+      height: auto;
+      border: none;
+      box-shadow: none;
+      object-fit: contain;
+      background: none;
+    }
+
 
     .sidebar {
       position: fixed;
@@ -103,21 +116,29 @@
     }
 
     .main-area {
-      flex: 1;
-      margin-left: 180px;
       display: flex;
       flex-direction: column;
+      flex: 1;
+      margin-left: 180px;
+      background: linear-gradient(to right, #f5e72d, #3cb4e5);
     }
 
     .main-content {
       flex-grow: 1;
       padding: 40px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-top: 10px; /* ez tolja lejjebb a tartalmat a logó alatt */
     }
 
     header h1 {
       font-size: 1.8em;
-      margin-bottom: 30px;
+      color: #000;
+      margin-bottom: 130px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+	  text-align: center;
+	  margin-top: 50px;
     }
 
     /* --- GYIK --- */
@@ -163,24 +184,6 @@
       font-weight: bold;
     }
 
-    /* --- Responsive --- */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
-      .sidebar {
-        transform: translateX(-100%);
-        width: 200px;
-      }
-
-      .sidebar.active {
-        transform: translateX(0);
-      }
-
-      .main-area {
-        margin-left: 0;
-      }
     }
   </style>
 </head>
@@ -210,7 +213,7 @@
       <header>
         <h1>Gyakran Ismételt Kérdések</h1>
       </header>
-
+		<img src="NagyLogo.png" alt="Yellow Carp logó" class="corner-logo">
       <section class="faq-section">
 
         <div class="faq-item">

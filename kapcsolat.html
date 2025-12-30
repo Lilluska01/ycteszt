@@ -217,6 +217,12 @@
   </style>
 </head>
 <body>
+
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
   <div class="page-container">
     <div class="sidebar">
       <h2>Yellow Carp</h2>
@@ -234,8 +240,8 @@
         <header>
           <h1>Hol tudsz elérni engem?</h1>
         </header>
-
-        <img src="NagyLogo.png" alt="Yellow Carp logó" class="corner-logo">
+        
+		<img src="NagyLogo.png" alt="Yellow Carp logó" class="corner-logo">
 
         <div class="contact-info">
           <p><strong>Email:</strong> <a href="mailto:yellowcarp.reels@gmail.com">yellowcarp.reels@gmail.com</a></p>
@@ -256,5 +262,16 @@
       </div>
     </div>
   </div>
+  
+  
+  
+  <script>
+const hamburger = document.getElementById("hamburger");
+const sidebar = document.getElementById("sidebar");
+
+hamburger.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
+</script>
 </body>
 </html>

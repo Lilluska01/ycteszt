@@ -6,9 +6,9 @@
   /* Logó mobilra - a tartalom jobb felső sarkában */
 .corner-logo {
     position: absolute;
-    top: 130px;       /* a cím alatt */
+    top: 120px;       /* a cím alatt */
     right: 20px;      /* majdnem a képernyő szélén */
-    width: 130px;
+    width: 125px;
     height: auto;
     z-index: 10;
   }
@@ -149,6 +149,3 @@
     font-size: 1.1em;
   }
 }
-
-
-

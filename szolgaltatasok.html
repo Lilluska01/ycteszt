@@ -187,6 +187,12 @@
   </style>
 </head>
 <body>
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
   <div class="page-container">
     <div class="sidebar">
       <h2>Yellow Carp</h2>
@@ -237,5 +243,14 @@
       </div>
     </div>
   </div>
+  
+  <script>
+const hamburger = document.getElementById("hamburger");
+const sidebar = document.getElementById("sidebar");
+
+hamburger.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
+</script>
 </body>
 </html>
