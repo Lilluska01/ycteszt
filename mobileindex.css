@@ -4,13 +4,17 @@
 @media (max-width: 768px) {
 
   /* Logó mobilra - a tartalom jobb felső sarkában */
-  .corner-logo {
-    position: relative;       /* nem fixed */
-    display: block;
-    margin: 20px 100px 20px 0;    /* felül 20px, alul 20px */
-    width: 130px;
+.corner-logo {
+    position: absolute;
+    top: 110px;       /* a cím alatt */
+    right: 20px;      /* majdnem a képernyő szélén */
+    width: 110px;
     height: auto;
-    align-self: flex-end;     /* flex konténerben jobbra */
+    z-index: 10;
+  }
+  
+  header.hero {
+    position: relative;
   }
 
   /* Hamburger megjelenítése */
