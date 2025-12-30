@@ -7,7 +7,7 @@
   .corner-logo {
     position: relative;       /* nem fixed */
     display: block;
-    margin: 20px 0 20px 0;    /* felül 20px, alul 20px */
+    margin: 20px 100px 20px 0;    /* felül 20px, alul 20px */
     width: 130px;
     height: auto;
     align-self: flex-end;     /* flex konténerben jobbra */
