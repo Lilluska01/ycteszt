@@ -1,28 +1,40 @@
-/* MOBILE SZOLGALTATASOK */
+/* MOBILESZOLGALTATASOK.CSS */
 
+/* Alap mobil beállítások */
 @media (max-width: 768px) {
 
-  /* Hamburger */
+  /* Logó mobilra */
+  .corner-logo {
+    position: absolute;
+    top: 120px;  /* a header alatt */
+    right: 20px;
+    width: 125px;
+    height: auto;
+    z-index: 10;
+  }
+
+  /* Hamburger megjelenítése */
   .hamburger {
     display: flex;
-    position: fixed;
+    position: fixed;           
     top: 15px;
     left: 15px;
-    width: 30px;
-    height: 25px;
     flex-direction: column;
     justify-content: space-between;
+    width: 30px;
+    height: 25px;
     cursor: pointer;
     z-index: 2000;
   }
 
   .hamburger span {
     height: 4px;
-    background-color: #f1c40f;
+    background: #f1c40f;
     border-radius: 2px;
+    width: 100%;
   }
 
-  /* Sidebar mobil */
+  /* Sidebar mobilra */
   .sidebar {
     position: fixed;
     top: 0;
@@ -31,45 +43,64 @@
     transition: transform 0.3s ease;
     width: 180px;
     height: 100vh;
+    background-color: #1b2838;
     z-index: 1000;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  .sidebar h2 {
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: #f1c40f;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .sidebar ul li a {
+    display: block;
+    padding: 12px 20px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #f1c40f;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar ul li a:hover {
+    background-color: #3cb4e5;
+    color: #fff;
+    transform: scale(1.05);
   }
 
   .sidebar.active {
     transform: translateX(0);
   }
 
-  /* Main */
+  /* Main content margin levétele */
   .main-area {
     margin-left: 0;
+    padding: 0 15px;
   }
 
   .main-content {
-    padding: 20px;
-    position: relative;
-    margin-top: 0;
+    margin-top: 20px;
   }
 
-  /* Cím */
-  header h1 {
-    font-size: 1.5em;
-    margin-top: 70px;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-
-  /* LOGÓ – mobilon felül jobb oldalt */
-  .corner-logo {
-    position: absolute;
-    top: 60px;
-    right: 15px;
-    width: 110px;
-    height: auto;
-    z-index: 5;
-  }
-
-  /* Szolgáltatás lista */
+  /* Szolgáltatás lista mobilon */
   .service-list {
     padding: 15px;
+  }
+
+  .service-item {
+    margin-bottom: 15px;
   }
 
   .service-item h3 {
@@ -78,27 +109,41 @@
 
   .service-item p {
     font-size: 0.95em;
-    line-height: 1.4;
   }
 
-  /* Footer */
+  /* Footer mobilon */
   .bottom-bar {
     font-size: 0.85em;
     padding: 8px;
+    text-align: center;
   }
 }
 
-/* Extra kicsi mobil */
+/* Extra kisebb eszközre, 480px alatt */
 @media (max-width: 480px) {
 
-  header h1 {
-    font-size: 1.3em;
-    margin-bottom: 30px;
+  .corner-logo {
+    width: 100px;
+    top: 100px;
+    right: 15px;
   }
 
-  .corner-logo {
-    width: 90px;
-    top: 55px;
-    right: 10px;
+  .hamburger {
+    top: 10px;
+    left: 10px;
+    width: 25px;
+    height: 20px;
+  }
+
+  .hamburger span {
+    height: 3px;
+  }
+
+  .service-item h3 {
+    font-size: 1em;
+  }
+
+  .service-item p {
+    font-size: 0.9em;
   }
 }
