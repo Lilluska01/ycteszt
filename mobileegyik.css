@@ -1,0 +1,96 @@
+/* MOBILEGYIK.CSS */
+
+@media (max-width: 768px) {
+
+  /* Hamburger */
+  .hamburger {
+    display: flex;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2000;
+  }
+
+  .hamburger span {
+    height: 4px;
+    background-color: #f1c40f;
+    border-radius: 2px;
+  }
+
+  /* Sidebar mobilon */
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  /* Main area */
+  .main-area {
+    margin-left: 0;
+  }
+
+  .main-content {
+    padding: 20px;
+    margin-top: 0;
+  }
+
+  /* Címsor */
+  header h1 {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 1.5em;
+    text-align: left;
+  }
+
+  /* LOGÓ – csak itt, a cím mellett */
+  .corner-logo {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    width: 110px;
+    height: auto;
+    z-index: 5;
+  }
+
+  /* FAQ */
+  .faq-section {
+    padding: 20px;
+  }
+
+  .faq-item h3 {
+    font-size: 1em;
+  }
+
+  .faq-item p {
+    font-size: 0.95em;
+  }
+
+  /* Footer */
+  .bottom-bar {
+    font-size: 0.85em;
+    padding: 8px;
+  }
+}
+
+/* Extra kicsi mobil */
+@media (max-width: 480px) {
+
+  header h1 {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+  }
+
+  .corner-logo {
+    width: 90px;
+    top: 65px;
+    right: 10px;
+  }
+
+}
