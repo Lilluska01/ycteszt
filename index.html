@@ -195,28 +195,35 @@
     }
 
     /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
-      z-index: 3000;
-	  align-items: flex-start; /* felülről kezdődik */
-	  padding-top: 0; /* tetszőleges érték, szabályozza a távolságot a tetejétől */
-    }
 
-    .modal-content {
-      background: linear-gradient(
-      135deg,
-      rgba(255, 244, 150, 0.95),
-      rgba(120, 200, 255, 0.95)
-      );
-      max-width: 750px;
-      margin: 0 auto;
-      padding: 30px;
-      border-radius: 14px;
-      position: relative;
-    }
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 3000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  overflow: auto; /* 🔥 minden irányba görgethető ha kell */
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 750px;
+
+  max-height: 90vh;        /* ne lógjon ki */
+  overflow-y: auto;        /* 🔥 belső scroll */
+
+  padding: 30px;
+  border-radius: 14px;
+  position: relative;
+
+  box-sizing: border-box;  /* 🔥 EZ FONTOS zoom miatt */
+}
 
 .modal-content {
   transform: scale(0.92);
@@ -826,6 +833,25 @@ document.addEventListener("DOMContentLoaded", function() {
     sidebar.classList.toggle("active");
   });
 });
+
+function openPost(card) {
+  const modal = document.getElementById("postModal");
+
+  document.getElementById("modalText").innerHTML =
+    card.querySelector(".full-post").innerHTML;
+
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden"; // 🔒 háttér tiltás
+
+  modal.classList.remove("show");
+  void modal.offsetWidth;
+  modal.classList.add("show");
+}
+
+function closePost() {
+  document.getElementById("postModal").style.display = "none";
+  document.body.style.overflow = "auto"; // 🔓 visszaállítás
+}
 </script>
 
 
