@@ -598,7 +598,18 @@
 			<p>
 			További adalék, hogy miért is kell újonan foglalkozni egy Shimano orsóval, ha szeretnénk, hogy hosszú életű legyen.  A bemutatáshoz egy szinte teljesen új...
 			</p>
-            <div class="full-post" style="display:none">
+			<div class="full-post" style="display:none">
+				<div class="post-gallery">
+						  <video controls width="21%" style="border-radius: 12px; box-shadow: 0 0 8px rgba(0,0,0,0.25);" muted>
+							<source src="post6.mp4" type="video/mp4">
+							A böngésződ nem támogatja a videó lejátszást.
+						  </video>
+						  <video controls width="21%" style="border-radius: 12px; box-shadow: 0 0 8px rgba(0,0,0,0.25);" muted>
+							<source src="post6_1.mp4" type="video/mp4">
+							A böngésződ nem támogatja a videó lejátszást.
+						  </video>
+
+				</div>
 
               <h2>A hosszú életű Shimano orsó titka</h2>
 				<p>
@@ -715,7 +726,6 @@ function closePost() {
   document.getElementById("postModal").style.display = "none";
 }
 
-/* KÉP NAGYÍTÁS – DELEGÁLT */
 document.addEventListener("click", function (e) {
   if (e.target.closest(".post-gallery img")) {
     document.getElementById("viewerImg").src = e.target.src;
