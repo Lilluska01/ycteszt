@@ -89,7 +89,6 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
-    /* Hamburger */
     .hamburger {
       display: none;
       position: fixed;
@@ -145,7 +144,6 @@
       background: rgba(0,0,0,0.2);
     }
 
-    /* Hasznos bejegyzések */
     .posts-section h2 {
       text-align: center;
       margin-bottom: 30px;
@@ -194,47 +192,45 @@
       flex-grow: 1;
     }
 
-    /* Modal */
+	.modal {
+	  display: none;
+	  position: fixed;
+	  inset: 0;
+	  background: rgba(0,0,0,0.75);
+	  z-index: 3000;
 
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  z-index: 3000;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	  padding: 20px;
+	  overflow: auto;
+	}
 
-  padding: 20px;
-  overflow: auto; /* 🔥 minden irányba görgethető ha kell */
-}
+	.modal-content {
+	  width: 100%;
+	  max-width: 750px;
 
-.modal-content {
-  width: 100%;
-  max-width: 750px;
+	  max-height: 90vh;
+	  overflow-y: auto;
 
-  max-height: 90vh;        /* ne lógjon ki */
-  overflow-y: auto;        /* 🔥 belső scroll */
+	  padding: 30px;
+	  border-radius: 14px;
+	  position: relative;
 
-  padding: 30px;
-  border-radius: 14px;
-  position: relative;
+	  box-sizing: border-box;
+	}
 
-  box-sizing: border-box;  /* 🔥 EZ FONTOS zoom miatt */
-}
+	.modal-content {
+	  transform: scale(0.92);
+	  opacity: 0;
+	  transition: transform 0.25s ease, opacity 0.25s ease;
+	}
 
-.modal-content {
-  transform: scale(0.92);
-  opacity: 0;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.modal.show .modal-content {
-  transform: scale(1);
-  opacity: 1;
-}
+	.modal.show .modal-content {
+	  transform: scale(1);
+	  opacity: 1;
+	}
 
 
     .close {
@@ -245,7 +241,6 @@
       cursor: pointer;
     }
 
-    /* Footer */
     .bottom-bar {
       background: #1b1b1b;
       color: #fff;
@@ -311,7 +306,6 @@
 	  overflow: hidden;
 	}
 
-	/* MODAL */
 	.modal {
 	  display: none;
 	  position: fixed;
@@ -342,15 +336,15 @@
 	}
 	.post-gallery {
 	  display: flex;
-	  flex-wrap: wrap;          /* sorba törés */
-	  justify-content: center;  /* sorok középre igazítása */
+	  flex-wrap: wrap;
+	  justify-content: center;
 	  gap: 12px;
 	  margin: 20px 0;
 	}
 
 	.post-gallery img {
-	  width: calc((100% - 36px) / 4); /* max 4 kép egy sorban, gap figyelembe véve */
-	  max-width: 250px;               /* ne legyen túl nagy */
+	  width: calc((100% - 36px) / 4);
+	  max-width: 250px;
 	  height: auto;
 	  object-fit: cover;
 	  border-radius: 12px;
@@ -361,7 +355,6 @@
 	.post-gallery img:hover {
 	  transform: scale(1.05);
 	}
-	/* KÉP NAGYÍTÓ */
 	.image-viewer {
 	  display: none;
 	  position: fixed;
@@ -541,6 +534,7 @@
 					<img src="post2_4.jpg" alt="">
 					
 				</div>
+              <h2>Ultegra 5500 XTC-XSC Ci4</h2>
               <p>Már az ötödik Ultegra 5500 XTC-XSC Ci4 tulajdonossal találkoztam, aki nem elégedett az orsó fékjével. Egybehangzóan mondták el, hogy akadozva adagolják a zsinórt fárasztáskor és nagyobb fékerőnél azaz nagyobb halnál, fokozódik ez a gond. Remélem nem járok tévúton, de talán megvan a probléma oka. A képeken egy ilyen orsó fém féklamellái vannak, amiken látható, milyen kis felületen érnek valójában a gyári, igen kemény (talán POM anyagú) lamellákhoz. Igy pedig a fém lamellák egyenletlensége egyenes út az akadozó fékhez. Egyik orsónál a tulajdonos a fém lamellákat munkálta közel teljesen síkra, elmondása szerint az ő igen hosszú fém megmunkálási gyakorlatával sem volt egyszerű úgy megoldani, hogy lényegesen ne vékonyítson rajtuk. Másik három orsóba pedig, és ez itt a reklám helye 🙂, az általam készített teflon lamella került, ami jóval lágyabb, mint a gyári, így kissé jobban felveszi a fém egyenletlenségét. Az elméletem nem áll teljesen fix alapokon, de a gyakorlatban mindhárom tulaj meg van elégedve a csere eredményével.</p>
             </div>
           </div>
@@ -559,6 +553,7 @@
 
 						<img src="post3_1.jpg" alt="">
 				</div>
+              <h2>A dobszoknyák...</h2>
               <p>A dobszoknyák (zsinór aláfutás gátló) törése eléggé bosszantó és zsebbe nyúlós dolog. Ezen kívül jelenleg akadozik is az ellátás belőlük. A két leggyakoribbnak mondható oka, pedig olyan dolog, amire figyelni tudunk. Az első helyen szerepel a szállítás. Mint a mellékelt videón és képen is látszik, nem kell túl sok a szoknya fülnek, hogy akár a botzsákban, akár az orsó tartóban annyira megnyomódjon a felső holtpont közelében állo szoknya, hogy mellé menjen a vezető vályúnak. És ha már mellette van, akkor lefelé haladva egyre jobban feszülni fog, aztán le is törik. Így érdemes használatba vétel előtt meggyőződni rendesen áll e. A második, amikor valaki az esetleg nyeletősre állított féknél úgy vág be, hogy alulról ráfog a dobra. Ilyenkor is nagyon könnyen ki lehet téríteni a pályájából és ismét megvan a baj.</p>
               <p>Aztán van még egy harmadik dolog, ami azért eléggé sűrűn előfordul. Amikor valaki nekilát takarítani, ne adj isten szervizelni az orsóját és a külső gyűrűjénél fogva akarja az összes felette lévő alkatrésszel együtt lehúzni a szoknyát. Ezzel egyedül az a gond, ha nincs annyi műszaki érzéke, hogy észrevegye, ebből törés lesz akkor inkább ne piszkálja az orsót. 🤣😆😁</p>
             </div>
@@ -598,88 +593,18 @@
 
           <!-- POST 6 -->
           <div class="post-card" onclick="openPost(this)">
-            <div class="post-image" style="background-image:url('post1.jpg')"></div>
-            <h3>BeastMaster 14000 XC került a „boncasztalra”</h3>
+            <div class="post-image" style="background-image:url('nopic.png')"></div>
+            <h3>A hosszú életű Shimano orsó titka</h3>
 			<p>
-			Ahogy a külsején is látszik, közvetlenül a <strong>Speedmaster XTC-XSC</strong> orsók leszármazottja
-			(amik meg ugye műszakilag az előző jó néhány <strong>Ultegrának</strong> a klónjai)....
-			
+			További adalék, hogy miért is kell újonan foglalkozni egy Shimano orsóval, ha szeretnénk, hogy hosszú életű legyen.  A bemutatáshoz egy szinte teljesen új...
+			</p>
             <div class="full-post" style="display:none">
-				<div class="post-gallery">
-					<img src="post1_1.jpg" alt="">
-					<img src="post1_2.jpg" alt="">
-					<img src="post1_3.jpg" alt="">
-					<img src="post1_4.jpg" alt="">
-					
-				</div>
-              <h2>BeastMaster 14000 XC került a „boncasztalra”</h2>
-				<p>
-				Ahogy a külsején is látszik, közvetlenül a <strong>Speedmaster XTC-XSC</strong> orsók leszármazottja
-				(amik meg ugye műszakilag az előző jó néhány Ultegrának a klónjai).
-				Így bátran mondhatjuk, hogy tulajdonképpen egy Ultegrával van dolgunk.
-				</p>
 
+              <h2>A hosszú életű Shimano orsó titka</h2>
 				<p>
-				A weben sok helyen olvasható, a jellemzőket átugorva írnám le, mit láttam.
-				</p>
-
-				<p>
-				A zsinórvezető ház az általam kevésbé szeretett alap típus, de szerencsére a minimálisan jobb,
-				króm bevonatos. Ez ugyanúgy műanyag, mint a fekete változata, de tapasztalatok alapján
-				ebbe kissé ritkábban vág bele a zsinór.
-				</p>
-
-				<p>
-				A régebbi, például az Aerlexekben használt hajtókar fém, masszív kivitel.
-				A fogantyú sajnos nem csapágyazható, és mint ennél a fajtánál megszokott,
-				már újonnan is kicsit lóg oldalra. Sűrűn kell tisztítani és nagyon lágy zsírral
-				bekenni, így lassabb ütemben kotyogósodik tovább.
-				</p>
-
-				<p>
-				A zsinórvezető görgőben a szokásos krómozott réz persely található,
-				ezt egyből lecseréltem egy kétcsapágyas szettre.
-				</p>
-
-				<p>
-				A tányérkerék tengely a Shimanótól jól ismert kék műanyag perselyekben forgott,
-				ezek is csapágyra lettek cserélve.
-				</p>
-
-				<p>
-				Szintén csere után kiáltott a csigatengely alján található műanyag persely.
-				</p>
-
-				<p>
-				Ha már lendületben voltam, a dobemelő tengely két végén lévő perselyek helyére
-				is csapágy szett került.
-				</p>
-
-				<p>
-				Mivel jobban szeretem a tapadásmentesebb és gyorsabb féket,
-				a gyári filc lamellákat teflonra cseréltem.
-				</p>
-
-				<p>
-				Az olcsóbb eladási ár érdekében dobszűkítőket nem csomagoltak hozzá,
-				de szerencsére jó hozzá az eddigi 14000-es dobokhoz való,
-				amiből van bőven nálam, és ki is egészítettem a csomagot
-				egy 10000-es és egy 3500-as méretűvel.
-				</p>
-
-				<p>
-				Nem volt különösebb hézag a ház és a fedele csatlakozásánál,
-				de a végén ház tömítést is kapott.
-				</p>
-
-				<p>
-				Oké, hogy nem olcsó egy ilyen komplett tuning,
-				de az orsó pillanatnyi árával együtt
-				körülbelül <strong>56 500 forintért</strong>
-				egy <strong>8+1 csapágyas</strong>,
-				<strong>14000-es</strong>, <strong>távdobó</strong>,
-				Ultegra minőségű, sőt annál magasabb szintre fejlesztett,
-				<strong>vadi új orsót</strong> kapunk.
+				További adalék, hogy miért is kell újonnan foglalkozni egy Shimano orsóval, ha szeretnénk, hogy hosszú életű legyen. A bemutatáshoz egy szinte teljesen új orsót használtam, nem egy agyon koptatott darabot.<br><br>
+				Első mini videón a hajtókar tengely irányu mozgásából látható, hogy a tányérkerék hézagolását gyárilag nem túl pontosan végzik el. Persze nem szabad nullára hézagolni, de azért ez egy picit sok és sajnos ennél sokkal durvább kotyogással is találkozhatunk vadi új orsónál. Ennek a hibának közvetlen következménye, hogy amikor tekerés közben óhatatlanul tengely irányban is mozgatjuk a kart, azon keresztül a hajtó fogaskerekeket úgy dörzsöljük egymáson, amire egy fogaskerék hajtás nincs tervezve, így gyorsabban elkopik.<br><br>
+				Második videón a dobemelő (worm) tengely szintén tengely irányú kotyogása. Mivel itt több problémát is okoz ez a feleslegesen nagy holtjáték, ezért csak egy nagyon lerövidített és egyszerűsített magyarázat, hogy ez miért baj. Ennek a tengelynek a vájatában fut egy kb 1mm vastag "nyelv", ami tulajdonképpen emeli a dobot. Ez minden irányváltáskor, alsó és felső holtponton, lök egyet a tengelyen le illetve fel. Így itt is kapunk egy olyan felesleges mozgást, amire nincs szükség és csak plusz kopást okoz. Mondjuk itt már nem csak hézagolni tudunk a tartósabbá tételért, hanem még csapagyazhatunk is, ami már egy másik téma lesz.
 				</p>
 
             </div>
@@ -687,72 +612,66 @@
 
           <!-- POST 7 -->
           <div class="post-card" onclick="openPost(this)">
-            <div class="post-image" style="background-image:url('post2.jpg')"></div>
-            <h3>Ultegra 5500 XTC-XSC Ci4</h3>
-            <p>Már az ötödik Ultegra 5500 XTC-XSC Ci4 tulajdonossal találkoztam, aki nem elégedett az orsó fékjével. Egybehangzóan mondták el, hogy akadozva adagolják a zsinórt fárasztáskor és nagyobb...</p>
+            <div class="post-image" style="background-image:url('post7.jpg')"></div>
+            <h3>Miért is nem árt újonnan átnézni az orsónkat?</h3>
+            <p>Kezdésnek egy fotó arról, miért is nem árt újonnan átnézni az orsónkat....</p>
             <div class="full-post" style="display:none">
 				<div class="post-gallery">
-					<img src="post2_1.jpg" alt="">
-					<img src="post2_2.jpg" alt="">
-					<img src="post2_3.jpg" alt="">
-					<img src="post2_4.jpg" alt="">
+					<img src="post7.jpg" alt="">
 					
 				</div>
-              <p>Már az ötödik Ultegra 5500 XTC-XSC Ci4 tulajdonossal találkoztam, aki nem elégedett az orsó fékjével. Egybehangzóan mondták el, hogy akadozva adagolják a zsinórt fárasztáskor és nagyobb fékerőnél azaz nagyobb halnál, fokozódik ez a gond. Remélem nem járok tévúton, de talán megvan a probléma oka. A képeken egy ilyen orsó fém féklamellái vannak, amiken látható, milyen kis felületen érnek valójában a gyári, igen kemény (talán POM anyagú) lamellákhoz. Igy pedig a fém lamellák egyenletlensége egyenes út az akadozó fékhez. Egyik orsónál a tulajdonos a fém lamellákat munkálta közel teljesen síkra, elmondása szerint az ő igen hosszú fém megmunkálási gyakorlatával sem volt egyszerű úgy megoldani, hogy lényegesen ne vékonyítson rajtuk. Másik három orsóba pedig, és ez itt a reklám helye 🙂, az általam készített teflon lamella került, ami jóval lágyabb, mint a gyári, így kissé jobban felveszi a fém egyenletlenségét. Az elméletem nem áll teljesen fix alapokon, de a gyakorlatban mindhárom tulaj meg van elégedve a csere eredményével.</p>
+              <h2>Miért is nem árt újonnan átnézni az orsónkat?</h2>
+              <p>Kezdésnek egy fotó arról, miért is nem árt újonnan átnézni az orsónkat. Avagy amikor a maláj munkás spórol a cégnek. 😢</p>
             </div>
           </div>
 
           <!-- POST 8 -->
           <div class="post-card" onclick="openPost(this)">
-            <div class="post-image" style="background-image:url('post3.jpg')"></div>
-            <h3>A dobszoknyák...</h3>
-            <p>A dobszoknyák (zsinór aláfutás gátló) törése eléggé bosszantó és zsebbe nyúlós dolog. Ezen kívül jelenleg akadozik is az ellátás belőlük. A két leggyakoribbnak mondható oka, pedig...</p>
+            <div class="post-image" style="background-image:url('post8.jpg')"></div>
+            <h3>Zsinór kapacitás táblázat tájékoztató adatokkal. </h3>
+            <p>A feltekerhető mennyiségek viszont eltérhetnek a megadottól, mert a zsinórok sem méretpontosak és ízlés kérdése, ki mennyire tölti tele a dobját. Jónéhány orsó leírása...</p>
             <div class="full-post" style="display:none">
 				<div class="post-gallery">
-						  <video controls width="21%" style="border-radius: 12px; box-shadow: 0 0 8px rgba(0,0,0,0.25);" muted>
-							<source src="post3_2.mp4" type="video/mp4">
-							A böngésződ nem támogatja a videó lejátszást.
-						  </video>
-
-						<img src="post3_1.jpg" alt="">
+						<img src="post8.jpg" alt="" style="width: 70%; max-width: 500px;">
 				</div>
-              <p>A dobszoknyák (zsinór aláfutás gátló) törése eléggé bosszantó és zsebbe nyúlós dolog. Ezen kívül jelenleg akadozik is az ellátás belőlük. A két leggyakoribbnak mondható oka, pedig olyan dolog, amire figyelni tudunk. Az első helyen szerepel a szállítás. Mint a mellékelt videón és képen is látszik, nem kell túl sok a szoknya fülnek, hogy akár a botzsákban, akár az orsó tartóban annyira megnyomódjon a felső holtpont közelében állo szoknya, hogy mellé menjen a vezető vályúnak. És ha már mellette van, akkor lefelé haladva egyre jobban feszülni fog, aztán le is törik. Így érdemes használatba vétel előtt meggyőződni rendesen áll e. A második, amikor valaki az esetleg nyeletősre állított féknél úgy vág be, hogy alulról ráfog a dobra. Ilyenkor is nagyon könnyen ki lehet téríteni a pályájából és ismét megvan a baj.</p>
-              <p>Aztán van még egy harmadik dolog, ami azért eléggé sűrűn előfordul. Amikor valaki nekilát takarítani, ne adj isten szervizelni az orsóját és a külső gyűrűjénél fogva akarja az összes felette lévő alkatrésszel együtt lehúzni a szoknyát. Ezzel egyedül az a gond, ha nincs annyi műszaki érzéke, hogy észrevegye, ebből törés lesz akkor inkább ne piszkálja az orsót. 🤣😆😁</p>
+				<p>A feltekerhető mennyiségek viszont eltérhetnek a megadottól, mert a zsinórok sem méretpontosak és ízlés kérdése, ki mennyire tölti tele a dobját. Jónéhány orsó leírása és pár cikk alapján arra következtem, hogy a nagyobb orsoknál 2 mm-re a dob pereme alá töltve van a gyári ajánlás.</p>
             </div>
           </div>
 
           <!-- POST 9 -->
           <div class="post-card" onclick="openPost(this)">
-            <div class="post-image" style="background-image:url('post4.jpg')"></div>
-            <h3>Újabb, miért cseréljük a perselyt csapágyra, poszt, néhány fotóval.</h3>
-            <p>Ezeken a képeken látható, hogy egy jobb oldalán, gyárilag műanyag persellyel szerelt, kettő éves orsó tányérkerék perselye milyen mértékben...</p>
+            <div class="post-image" style="background-image:url('post9.jpg')"></div>
+            <h3>Ismét egy kis fék téma!</h3>
+            <p>Többször találkoztam azzal, hogy a fotókon szereplő gumi tömítéses dobbal szerelt orsók fékje megváltozik egy dob csere, vagy csak az orsón lévő dob levétele...</p>
             <div class="full-post" style="display:none">
 				<div class="post-gallery">
-					<img src="post4_1.jpg" alt="">
-					<img src="post4_2.jpg" alt="">
-					<img src="post4_3.jpg" alt="">
+					<img src="post9.jpg" alt="">
+					<img src="post9_1.jpg" alt="">
+					<img src="post9_2.jpg" alt="">
 				</div>
-              <h2>Újabb, miért cseréljük a perselyt csapágyra, poszt, néhány fotóval.</h2>
-              <p>Ezeken a képeken látható, hogy egy jobb oldalán, gyárilag műanyag persellyel szerelt, kettő éves orsó tányérkerék perselye milyen mértékben koptatja meg a tengelyét, annak ellenére, hogy volt rajta kenőanyag. Jól látható, hogy amennyiben valaki gondolkodik az orsója tuningolásán, érdemes ezt minél előbb elvégezni, hogy a persely helyére betett csapágy, ne egy már kopott alkatrészre kerüljön. Persze, ha már megvan egy ideje az orsó, akkor érvénybe lép a jobb később, mint soha.</p>
+              <h2>Ismét egy kis fék téma!</h2>
+              <p>Többször találkoztam azzal, hogy a fotókon szereplő gumi tömítéses dobbal szerelt orsók fékje megváltozik egy dob csere, vagy csak az orsón lévő dob levétele és visszarakása után. Volt már, aki ilyen orsónál, azzal fordult hozzám, hogy "olyan nyúlós lett a fék". És volt, aki arra panaszkodott, hogy hiába cserélte teflonra a lamellákat, mégsem lett elég gyors a fék. Ezeknek ugyanaz a jelenség az okozója. A gumigyűrű elöregszik és a fékcsillag maga alá szorítja. Megoldás több is van, de persze legjobb a gumi cseréje. A másik gyors orvoslás, ha a gyűrűt, vagy a fékcsillag külső, a gumival találkozó peremét vékonyan bekenjük zsírral, így a gumi a helyére csúszik. Mondjuk ezt új gyűrű esetén sem árt megtenni.
+				És ez itt a reklám helye! 😁.
+				5500 orsóhoz új eredeti Shimano gyűrűt még tudok adni, 540 Ft/db áron. A 14000 méretű sajnos elfogyott.</p>
             </div>
           </div>
 
           <!-- POST 10 -->
-          <div class="post-card" onclick="openPost(this)">
-            <div class="post-image" style="background-image:url('post5.jpg')"></div>
-            <h3>Zsinór csavarodás</h3>
-            <p>Az valószínűleg nem újdonság már senkinek, hogy leggyakrabban a zsinór csavarodás oka az orsó zsinórvezető görgőjénél keresendő. Amikor a görgő bármi okból fékezôdik és nem forog azzal...</p>
+<!--          <div class="post-card" onclick="openPost(this)">
+            <div class="post-image" style="background-image:url('post10.jpg')"></div>
+            <h3>Cím</h3>
+            <p>Részlet a leírásból...</p>
             <div class="full-post" style="display:none">
 				<div class="post-gallery">
-					<img src="post5.jpg" alt="">
-					
+					<img src="post10.jpg" alt="">
+					<img src="post10_1.jpg" alt="">
+					<img src="post10_2.jpg" alt="">
 				</div>
-              <h2>Zsinór csavarodás</h2>
-              <p>Az valószínűleg nem újdonság már senkinek, hogy leggyakrabban a zsinór csavarodás oka az orsó zsinórvezető görgőjénél keresendő. Amikor a görgő bármi okból fékezôdik és nem forog azzal a sebességgel, ahogy a zsinór halad rajta, akkor lép fel ez a jelenség. Sajnos, ahogy más gyártók, úgy a Shimano is spórol a görgők csapágyazásán és gyakran perselyt tesz a görgőbe és így előre borítékolható, hogy nem fog tökéletesen forogni, ezért érdemes csapágyra cserélni a görgőt. Sokan ezt felesleges pénz kidobásnak gondolják, mert bíznak a shimi mérnökeiben. Nekik ajánlanám a figyelmébe a fotón látható görgőket. Mindhárom krómozott réz és 14000-es Ultegrából van.
-              Az alsó görgő egy új orsóból származik, középső görgő egy kb egy éves heavy feeder boton használtból, a felső pedig egy nagyjából másfél szezont futott bojlisból. Mindkét orsó tulajdonosa mondta, hogy kissé csavarodott a zsinórja, aminek valószínűleg, ezt a kopást okozó súrlódás által okozott fékező erő volt az oka. És ez a kopás annak ellenére jött létre, hogy mindegyik perselyen volt a gyári kenőanyagból. Szerencsére a görgők csapágyra cserélése után teljesen megszűnt a zsinórok csavarodása.</p>
+              <h2>Cím a leírásban</h2>
+              <p>Leírás</p>
             </div>
           </div>
-
+-->		
         </div>
 
 
@@ -765,16 +684,15 @@
         <a href="mailto:yellowcarp.reels@gmail.com">yellowcarp.reels@gmail.com</a> | 
         <a href="tel:+36204113760">+36 20 411 3760</a></p>
       </div>
-  </div>
-</div>
+	  </div>
+	</div>
 
-<!-- MODAL -->
-<div class="modal" id="postModal">
-  <div class="modal-content">
-    <span class="close" onclick="closePost()">×</span>
-    <div id="modalText"></div>
-  </div>
-</div>
+	<div class="modal" id="postModal">
+	  <div class="modal-content">
+		<span class="close" onclick="closePost()">×</span>
+		<div id="modalText"></div>
+	  </div>
+	</div>
 
 <script>
 function openPost(card) {
@@ -785,9 +703,8 @@ function openPost(card) {
 
   modal.style.display = "block";
 
-  // 🔴 FONTOS: reseteljük az animációt
   modal.classList.remove("show");
-  void modal.offsetWidth; // ⬅️ kényszerített reflow (EZ OLDJA MEG)
+  void modal.offsetWidth;
 
   modal.classList.add("show");
 }
@@ -841,7 +758,7 @@ function openPost(card) {
     card.querySelector(".full-post").innerHTML;
 
   modal.style.display = "block";
-  document.body.style.overflow = "hidden"; // 🔒 háttér tiltás
+  document.body.style.overflow = "hidden";
 
   modal.classList.remove("show");
   void modal.offsetWidth;
@@ -850,13 +767,13 @@ function openPost(card) {
 
 function closePost() {
   document.getElementById("postModal").style.display = "none";
-  document.body.style.overflow = "auto"; // 🔓 visszaállítás
+  document.body.style.overflow = "auto";
 }
 </script>
 
 
 <div class="image-viewer" id="imageViewer">
-  <span class="close" onclick="closeImage()">×</span>
+  <span class="close" onclick="closeImage()">✖</span>
   <img id="viewerImg" src="">
 </div>
 
