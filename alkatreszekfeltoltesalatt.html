@@ -371,14 +371,16 @@
 	});
   </script>
   
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", function() {
   const currentPage = window.location.pathname.split("/").pop();
   const menuLinks = document.querySelectorAll(".sidebar a");
 
   menuLinks.forEach(link => {
     const linkPage = link.getAttribute("href");
-    if (linkPage === currentPage) {
+
+    if (linkPage === currentPage || 
+        (currentPage === "" && linkPage === "index.html")) {
       link.classList.add("active");
     }
   });

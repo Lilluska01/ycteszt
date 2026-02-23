@@ -267,7 +267,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   menuLinks.forEach(link => {
     const linkPage = link.getAttribute("href");
-    if (linkPage === currentPage) {
+
+    if (linkPage === currentPage || 
+        (currentPage === "" && linkPage === "index.html")) {
       link.classList.add("active");
     }
   });
