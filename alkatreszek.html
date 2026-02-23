@@ -22,7 +22,14 @@
       flex: 1;
       min-height: 100vh;
     }
-
+	
+	.sidebar ul li a.active {
+	  background-color: #3cb4e5;
+	  color: #fff;
+	  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	  transform: scale(1.05);
+	}
+	
     .sidebar {
       position: fixed;
       top: 0;
@@ -493,5 +500,18 @@
 	  sidebar.classList.toggle("active");
 	});
   </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const currentPage = window.location.pathname.split("/").pop();
+  const menuLinks = document.querySelectorAll(".sidebar a");
+
+  menuLinks.forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    }
+  });
+});
+</script>
 </body>
 </html>
