@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 2000;
+    z-index: 3000;
   }
 
   .hamburger span {
@@ -22,7 +22,7 @@
     border-radius: 2px;
   }
 
-  /* Sidebar mobil */
+  /* Sidebar */
   .sidebar {
     position: fixed;
     top: 0;
@@ -31,7 +31,7 @@
     transition: transform 0.3s ease;
     width: 180px;
     height: 100vh;
-    z-index: 1000;
+    z-index: 2000;
   }
 
   .sidebar.active {
@@ -51,40 +51,22 @@
   /* Cím */
   header h1 {
     font-size: 1.5em;
-    margin-top: 60px;
+    margin-top: 80px;
     margin-bottom: 40px;
     text-align: left;
   }
 
-  /* LOGÓ – mobilon a cím mellett */
+  /* LOGÓ */
   .corner-logo {
     position: absolute;
-    top: 70px;
+    top: 80px;
     right: 15px;
     width: 110px;
-    height: auto;
-    z-index: 5;
   }
 
-  /* Kapcsolati adatok */
   .contact-info {
     max-width: 100%;
     padding: 15px;
-    font-size: 1em;
-  }
-
-  .contact-info p {
-    font-size: 1em;
-  }
-
-  /* Térkép konténer */
-  .map-container {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .map-container h2 {
-    font-size: 1.1em;
   }
 
   .map-container iframe {
@@ -92,25 +74,21 @@
     height: 300px;
   }
 
-  /* Footer */
   .bottom-bar {
     font-size: 0.85em;
     padding: 8px;
   }
 }
 
-/* Extra kicsi mobil */
 @media (max-width: 480px) {
 
   header h1 {
     font-size: 1.3em;
-    margin-bottom: 30px;
   }
 
   .corner-logo {
     width: 90px;
-    top: 65px;
-    right: 10px;
+    top: 70px;
   }
 
   .map-container iframe {
