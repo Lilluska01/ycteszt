@@ -89,18 +89,29 @@
     const search = document.getElementById('tableSearch');
     const esc = value => String(value ?? '').replace(/[&<>'"]/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' }[char]));
 
+    function displayCell(value, header) {
+      const text = String(value ?? '');
+      // Az Excelben a régi cikkszámoknál az RD előtag csak formázás volt.
+      // Itt a csak számokból álló régi cikkszámok előtt ténylegesen megjelenítjük.
+      return String(header ?? '').trim().toLocaleLowerCase('hu-HU') === 'régi cikkszám' && /^\d+$/.test(text)
+        ? `RD${text}`
+        : text;
+    }
+
     function renderRows(rows) {
       if (rows.length < 2) { wrap.innerHTML = '<div class="empty"><b>Nincs találat</b>A keresésre nem érkezett találat.</div>'; return; }
       const columns = Math.max(...rows.map(row => row.length));
       const header = rows[0];
       const body = rows.slice(1);
-      wrap.innerHTML = '<table><thead><tr>' + Array.from({ length:columns }, (_, index) => `<th>${esc(header[index])}</th>`).join('') + '</tr></thead><tbody>' + body.map(row => '<tr>' + Array.from({ length:columns }, (_, index) => `<td>${esc(row[index])}</td>`).join('') + '</tr>').join('') + '</tbody></table>';
+      wrap.innerHTML = '<table><thead><tr>' + Array.from({ length:columns }, (_, index) => `<th>${esc(header[index])}</th>`).join('') + '</tr></thead><tbody>' + body.map(row => '<tr>' + Array.from({ length:columns }, (_, index) => `<td>${esc(displayCell(row[index], header[index]))}</td>`).join('') + '</tr>').join('') + '</tbody></table>';
     }
 
     function displayWorkbook(book) {
       workbook = book;
       if (!book.SheetNames.length) throw new Error('A fájl nem tartalmaz munkalapot.');
-      allRows = XLSX.utils.sheet_to_json(book.Sheets[book.SheetNames[0]], { header:1, defval:'' });
+      // A raw:false az Excelben beállított megjelenítési formátumot is átveszi
+      // (például a régi cikkszámok automatikus „RD” előtagját).
+      allRows = XLSX.utils.sheet_to_json(book.Sheets[book.SheetNames[0]], { header:1, defval:'', raw:false });
       if (!allRows.length) throw new Error('Az első munkalap üres.');
       renderRows(allRows);
     }
