@@ -70,7 +70,7 @@
         <h1 class="page-title">Alkatrész-táblázat</h1>
         <section class="table-panel" aria-labelledby="table-heading">
           <div class="table-top">
-            <h2 class="table-heading" id="table-heading">Aktuális alkatrészlista</h2>
+            <p class="table-heading" id="table-heading" style="color:red;font-size:16px;font-style:italic;">Az oldalon található végleges lista még feltöltés alatt van, addig a táblázatban egy ideiglenes listát találhattok. <br>Az aktuális táblázatban lehetnek hibák és történhetnek apró változtatások.</p>
             <input class="table-search" id="tableSearch" type="search" placeholder="Keresés a táblázatban" aria-label="Keresés az alkatrészlistában">
           </div>
           <div class="table-wrap" id="tableWrap" aria-live="polite"><div class="empty">Betöltés…</div></div>
@@ -80,8 +80,7 @@
     </div>
   </div>
   <script>
-    // Csak ezt a projektbe feltöltött fájlt jeleníti meg az oldal minden látogatónak.
-    // Új lista közzétételéhez az alkatreszek.xlsx fájlt kell lecserélni a webhelyen.
+
     const EXCEL_FILE = './alkatreszek.xlsx';
     let workbook;
     let allRows = [];
@@ -91,8 +90,7 @@
 
     function displayCell(value, header) {
       const text = String(value ?? '');
-      // Az Excelben a régi cikkszámoknál az RD előtag csak formázás volt.
-      // Itt a csak számokból álló régi cikkszámok előtt ténylegesen megjelenítjük.
+
       return String(header ?? '').trim().toLocaleLowerCase('hu-HU') === 'régi cikkszám' && /^\d+$/.test(text)
         ? `RD${text}`
         : text;
@@ -109,8 +107,7 @@
     function displayWorkbook(book) {
       workbook = book;
       if (!book.SheetNames.length) throw new Error('A fájl nem tartalmaz munkalapot.');
-      // A raw:false az Excelben beállított megjelenítési formátumot is átveszi
-      // (például a régi cikkszámok automatikus „RD” előtagját).
+
       allRows = XLSX.utils.sheet_to_json(book.Sheets[book.SheetNames[0]], { header:1, defval:'', raw:false });
       if (!allRows.length) throw new Error('Az első munkalap üres.');
       renderRows(allRows);
